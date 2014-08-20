@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+              http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+         version="2.5"
+         xmlns="http://java.sun.com/xml/ns/javaee">
+	<display-name>etcsite</display-name>
+
+	<!-- Servlets -->
+	<servlet>
+		<servlet-name>authenticationServlet</servlet-name>
+		<servlet-class>edu.arizona.biosemantics.etcsite.server.rpc.AuthenticationService</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>fileServlet</servlet-name>
+		<servlet-class>edu.arizona.biosemantics.etcsite.server.rpc.FileService</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>fileAccessServlet</servlet-name>
+		<servlet-class>edu.arizona.biosemantics.etcsite.server.rpc.FileAccessService</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>fileSearchServlet</servlet-name>
+		<servlet-class>edu.arizona.biosemantics.etcsite.server.rpc.FileSearchService</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>taskServlet</servlet-name>
+		<servlet-class>edu.arizona.biosemantics.etcsite.server.rpc.TaskService</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>semanticMarkupServlet</servlet-name>
+		<servlet-class>edu.arizona.biosemantics.etcsite.server.rpc.semanticmarkup.SemanticMarkupService</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>matrixGenerationServlet</servlet-name>
+		<servlet-class>edu.arizona.biosemantics.etcsite.server.rpc.matrixgeneration.MatrixGenerationService</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>fileFormatServlet</servlet-name>
+		<servlet-class>edu.arizona.biosemantics.etcsite.server.rpc.FileFormatService</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>userServlet</servlet-name>
+		<servlet-class>edu.arizona.biosemantics.etcsite.server.rpc.UserService</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>setupServlet</servlet-name>
+		<servlet-class>edu.arizona.biosemantics.etcsite.server.rpc.SetupService</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>pipelineServlet</servlet-name>
+		<servlet-class>edu.arizona.biosemantics.etcsite.server.rpc.PipelineService</servlet-class>
+	</servlet>
+		<servlet>
+		<servlet-name>visualizationServlet</servlet-name>
+		<servlet-class>edu.arizona.biosemantics.etcsite.server.rpc.VisualizationService</servlet-class>
+	</servlet>
+		<servlet>
+		<servlet-name>taxonomyComparisonServlet</servlet-name>
+		<servlet-class>edu.arizona.biosemantics.etcsite.server.rpc.TaxonomyComparisonService</servlet-class>
+	</servlet>
+		<servlet>
+		<servlet-name>treeGenerationServlet</servlet-name>
+		<servlet-class>edu.arizona.biosemantics.etcsite.server.rpc.TreeGenerationService</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>Kaptcha</servlet-name>
+		<servlet-class>edu.arizona.biosemantics.etcsite.server.MyKaptchaServlet</servlet-class>
+		<!-- <servlet-class>com.google.code.kaptcha.servlet.KaptchaServlet</servlet-class> -->
+	</servlet>
+	<servlet>
+		<servlet-name>otoCollectionServlet</servlet-name>
+		<servlet-class>edu.arizona.biosemantics.oto2.oto.server.rpc.CollectionService</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>otoCollectionServlet</servlet-name>
+		<url-pattern>/etcsite/collection</url-pattern>
+	</servlet-mapping>
+
+	<!-- http://www.gwtproject.org/doc/latest/DevGuideServerCommunication.html#DevGuideImplementingServices
+	       -> Common pitfalls: for url-pattern help -->
+	<servlet-mapping>
+		<servlet-name>authenticationServlet</servlet-name>
+		<url-pattern>/etcsite/auth</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>fileServlet</servlet-name>
+		<url-pattern>/etcsite/file</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>fileSearchServlet</servlet-name>
+		<url-pattern>/etcsite/fileSearch</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>fileAccessServlet</servlet-name>
+		<url-pattern>/etcsite/fileAccess</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>taskServlet</servlet-name>
+		<url-pattern>/etcsite/task</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>semanticMarkupServlet</servlet-name>
+		<url-pattern>/etcsite/semanticMarkup</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>matrixGenerationServlet</servlet-name>
+		<url-pattern>/etcsite/matrixGeneration</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>fileFormatServlet</servlet-name>
+		<url-pattern>/etcsite/fileFormat</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>userServlet</servlet-name>
+		<url-pattern>/etcsite/user</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>setupServlet</servlet-name>
+		<url-pattern>/etcsite/setup</url-pattern>
+	</servlet-mapping> 
+	<servlet-mapping>
+		<servlet-name>visualizationServlet</servlet-name>
+		<url-pattern>/etcsite/visualization</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>treeGenerationServlet</servlet-name>
+		<url-pattern>/etcsite/treeGeneration</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>taxonomyComparisonServlet</servlet-name>
+		<url-pattern>/etcsite/taxonomyComparison</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Kaptcha</servlet-name>
+		<url-pattern>/etcsite/captcha/*</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>collectionServlet</servlet-name>
+		<servlet-class>edu.arizona.biosemantics.oto2.oto.server.rpc.CollectionService</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>collectionServlet</servlet-name>
+		<url-pattern>/etcsite/collection</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>Jersey Web Application</servlet-name>
+		<servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
+		<init-param>
+			<param-name>jersey.config.server.provider.packages</param-name>
+			<param-value>com.javahash.jersey;edu.arizona.biosemantics.oto2.oto.server.rest;org.codehaus.jackson.jaxrs</param-value>
+		</init-param>
+		<init-param>
+			<param-name>com.sun.jersey.api.json.POJOMappingFeature</param-name>
+			<param-value>true</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Jersey Web Application</servlet-name>
+		<url-pattern>/rest/*</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<servlet-name>downloadServlet</servlet-name>
+		<servlet-class>edu.arizona.biosemantics.etcsite.server.DownloadServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>downloadServlet</servlet-name>
+		<url-pattern>*.dld</url-pattern>
+	</servlet-mapping>
+
+
+	<context-param>
+		<!-- max size of the upload request -->
+		<param-name>maxSize</param-name>
+		<param-value>31457280</param-value>
+	</context-param>
+	<context-param>
+		<!-- Useful in development mode to slow down the uploads in fast networks.
+	         Put the number of milliseconds to sleep in each block received in the server.
+	         false or 0, means don't use slow uploads  -->
+		<param-name>slowUploads</param-name>
+		<param-value>200</param-value>
+	</context-param>
+
+	<servlet>
+		<servlet-name>uploadServlet</servlet-name>
+		<!-- This is the default servlet, it puts files in session -->
+		<servlet-class>edu.arizona.biosemantics.etcsite.server.UploadServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>uploadServlet</servlet-name>
+		<url-pattern>*.gupld</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<servlet-name>remoteLoggingServiceImpl</servlet-name>
+		<servlet-class>com.google.gwt.libideas.logging.server.RemoteLoggingServiceImpl</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>remoteLoggingServiceImpl</servlet-name>
+		<url-pattern>/etcsite/logging</url-pattern>
+	</servlet-mapping>
+
+	<listener>
+		<listener-class>
+  		edu.arizona.biosemantics.etcsite.server.ETCSiteServletContextListener
+		</listener-class>
+	</listener>
+
+	<!-- Default page to serve -->
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+	</welcome-file-list>
+	
+	
+	
+	<!-- oto lite -->
+	<servlet>
+		<servlet-name>GeneralServiceIml</servlet-name>
+		<servlet-class>edu.arizona.biosemantics.otolite.server.rpc.GeneralServiceIml</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>GeneralServiceIml</servlet-name>
+		<url-pattern>/etcsite/general</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<servlet-name>TermInfoServiceIml</servlet-name>
+		<servlet-class>edu.arizona.biosemantics.otolite.server.rpc.TermInfoServiceIml</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>TermInfoServiceIml</servlet-name>
+		<url-pattern>/etcsite/termInfo</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>ToOntologiesServiceImpl</servlet-name>
+		<servlet-class>edu.arizona.biosemantics.otolite.server.rpc.ToOntologiesServiceImpl</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>ToOntologiesServiceImpl</servlet-name>
+		<url-pattern>/etcsite/toOntologies</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>HierarchyServiceImpl</servlet-name>
+		<servlet-class>edu.arizona.biosemantics.otolite.server.rpc.HierarchyServiceImpl</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>HierarchyServiceImpl</servlet-name>
+		<url-pattern>/etcsite/hierarchy</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>OrderServiceImpl</servlet-name>
+		<servlet-class>edu.arizona.biosemantics.otolite.server.rpc.OrderServiceImpl</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>OrderServiceImpl</servlet-name>
+		<url-pattern>/etcsite/orders</url-pattern>
+	</servlet-mapping>
+
+</web-app>

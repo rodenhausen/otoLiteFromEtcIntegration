@@ -1,0 +1,59 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui"
+	xmlns:c="urn:import:com.google.gwt.user.cellview.client"
+	xmlns:my="urn:import:edu.arizona.biosemantics.etcsite.client.layout">
+	<ui:style>
+		.cellTable {
+	      border-bottom: 1px solid #ccc;
+	      text-align: left;
+	      margin-bottom: 4px;
+	    }
+
+		.cellTable td {
+			border-style: none; 
+		}
+
+		.leftMargin {
+  		 	margin-left: 5px;
+		}
+
+		.padding {
+			padding-top: 10px;
+			padding-bottom: 10px;
+		}
+	</ui:style>
+	<my:CenteredContentPanel>
+		<g:HTMLPanel>
+		    <div class='content900pxCentered'>
+		        <div id='taskManagerContent'>
+		            <g:VerticalPanel>
+		                <g:Label styleName="siteHeading">
+		                    Task Manager
+		                </g:Label>
+			          	<c:CellTable styleName="{style.padding}"
+				            addStyleNames='{style.cellTable}'
+				            pageSize='15'
+			           	 	ui:field='taskTable' />
+						<c:SimplePager
+			           		ui:field='pager' />
+						<g:HorizontalPanel>
+						    <g:FlowPanel styleName="{style.leftMargin}">
+						    <g:Button ui:field='resumeButton' title="continue with the selected task">Resume</g:Button>
+						    </g:FlowPanel>
+						    <g:FlowPanel styleName="{style.leftMargin}">
+						    <g:Button ui:field='rewindButton' title="re-categorize the terms for the selected task">Rewind</g:Button>
+						    </g:FlowPanel>
+						    <g:FlowPanel styleName="{style.leftMargin}">
+						    <g:Button ui:field='deleteButton' title="remove the selected task - the task will be removed but related files will not be deleted">Delete</g:Button>
+						    </g:FlowPanel>
+						    <g:FlowPanel styleName="{style.leftMargin}">
+						    <g:Button ui:field='shareButton' title="share the selected task with other users - the task and related files will be added to others' workspace">Share</g:Button>
+						    </g:FlowPanel>
+						</g:HorizontalPanel>
+		            </g:VerticalPanel> 
+		        </div>
+		    </div>
+		</g:HTMLPanel>
+	</my:CenteredContentPanel>
+</ui:UiBinder> 
